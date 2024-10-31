@@ -10,16 +10,16 @@ struct Node
 {
     int n = 1;
     string str;
-    Node * next;
+    Node* next;
 };
 
-class SUBD
+class NodeX
 {
 private:
     Node* head;
 public:
     
-    SUBD(struct Node* headX);
+    NodeX();
     void insertAtFirstPos(string str);
     void insertAtEndPos(string str);
     void insertAtPos(string str, int pos);
@@ -27,7 +27,7 @@ public:
     void deleteAtEndPos();
     void deleteAtPos(int pos);
     void printList();
-    ~SUBD();
+    ~NodeX();
 };
 
 class JSONX
@@ -39,7 +39,8 @@ protected:
     void eraseSubStrings(string & mainStr, const vector<string> & strList);
 public:
     JSONX();
-    string ReadingJSON (int indexObj, JSON& j);
+    string ReadingJSON (int indexObj);
+    int IsJSONtb (string tb);
     void Remove(string& path);
     void ConfigurationParserJSON(string& path, int numbT);
     ~JSONX();
@@ -52,6 +53,7 @@ private:
 public:
 
    void ComandStruct(const std::string& command);
-
+    void ValInsert(const std::string& table);
+    void  ColSelect(const string& tableName, const vector<string> columns);
 
 };
